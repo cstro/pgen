@@ -2,6 +2,12 @@
 
 Simple password generator written in C with no dependencies.
 
+- Generates a password of a specified length between 8 - 99.
+- Will always contain at least one uppercase and lowercase letter.
+- Optionally, will contain at least one number (default true).
+- Optionally, will contain at least one symbol (default false).
+
+
 ## Usage
 
 ```bash
@@ -15,6 +21,7 @@ make
 ## TODO
 
 - [X] Add optional numbers and symbols to password generation. Numbers default on and symbols default off.
+- [X] Ensure that if a password uses numbers and symbols, it includes at least one.
 - [ ] Add ability to regenerate password.
 - [ ] Add ability to restart.
 

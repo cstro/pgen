@@ -9,10 +9,16 @@ int main(void)
     srand(time(NULL));
 
     int len = get_password_len();
-    int use_numbers = get_numbers_flag();
-    int use_symbols = get_symbols_flag();
+    int numbers_enabled = get_numbers_flag();
+    int symbols_enabled = get_symbols_flag();
 
-    char *p = create_password(len, use_numbers, use_symbols);
+    char *p = create_password(len, numbers_enabled, symbols_enabled);
+
+    if (p == NULL)
+    {
+        puts("Something went wrong generating the password");
+        return -1;
+    }
 
     printf("Password: %s\n", p);
 }
