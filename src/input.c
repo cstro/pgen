@@ -6,6 +6,10 @@
 #define NO_INPUT 1
 #define TOO_LONG 2
 
+int min_len = 8;
+int max_len = 99;
+int default_len = 20;
+
 /**
  * Safely reads user input
  * https://stackoverflow.com/a/4815781
@@ -51,14 +55,15 @@ int get_password_len()
 
     while (1)
     {
-        input = get_input("How long is the password? (8-99): ", buff, sizeof(buff));
+        char prmpt[100];
+        sprintf(prmpt, "Enter a length between %d and %d (default %d) ", min_len, max_len, default_len);
+        input = get_input(prmpt, buff, sizeof(buff));
 
         char *p = &buff[0];
 
         if (*p == '\0')
         {
-            printf("❌ Please enter a value\n");
-            continue;
+            return default_len;
         }
 
         int non_digits = 0;
@@ -75,20 +80,20 @@ int get_password_len()
 
         if (non_digits)
         {
-            printf("❌ Only values 0-9 accepted\n");
+            puts("❌ Only values 0-9 accepted");
             continue;
         }
 
         int len;
         sscanf(buff, "%d", &len);
 
-        if (len < 8)
+        if (len < min_len)
         {
-            printf("❌ Minimum length is 8\n");
+            printf("❌ Minimum length is %d\n", min_len);
         }
-        else if (len > 99 || input == TOO_LONG)
+        else if (len > max_len || input == TOO_LONG)
         {
-            printf("❌ Maximum length is 99\n");
+            printf("❌ Maximum length is %d\n", max_len);
         }
         else
         {
