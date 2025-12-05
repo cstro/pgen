@@ -14,7 +14,7 @@ make
 
 ## TODO
 
-- [ ] Add optional numbers and symbols to password generation. Numbers default on and symbols default off.
+- [X] Add optional numbers and symbols to password generation. Numbers default on and symbols default off.
 - [ ] Add ability to regenerate password.
 - [ ] Add ability to restart.
 

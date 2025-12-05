@@ -104,10 +104,22 @@ int get_password_len()
 
 int get_numbers_flag()
 {
-    return 1;
+    char in[2];
+    puts("Use numbers in password");
+    get_input("Y/N (default Y) ", in, sizeof(in));
+
+    char v = in[0];
+
+    return v == 'Y' || v == 'y' || v == '\0';
 }
 
 int get_symbols_flag()
 {
-    return 1;
+    char in[2];
+    puts("Use symbols in password");
+    get_input("Y/N (default N) ", in, sizeof(in));
+
+    char v = in[0];
+
+    return v == 'Y' || v == 'y';
 }
