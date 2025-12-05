@@ -70,7 +70,7 @@ int check_valid_password(char *password, int requires_number, int requires_symbo
         return 0;
     }
 
-    // If we get there then we either don't require a number/symbol or require
+    // If we get here then we either don't require a number/symbol or require
     // them and have them, so we only need to check for letters.
     return contains_l_letter && contains_u_letter;
 }

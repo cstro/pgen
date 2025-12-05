@@ -22,8 +22,8 @@ make
 
 - [X] Add optional numbers and symbols to password generation. Numbers default on and symbols default off.
 - [X] Ensure that if a password uses numbers and symbols, it includes at least one.
-- [ ] Add ability to regenerate password.
-- [ ] Add ability to restart.
+- [X] Add ability to regenerate password.
+- [ ] Support args to generate a password without needing to interact with the program.
 
 ## License
 

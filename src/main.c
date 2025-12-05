@@ -12,13 +12,23 @@ int main(void)
     int numbers_enabled = get_numbers_flag();
     int symbols_enabled = get_symbols_flag();
 
-    char *p = create_password(len, numbers_enabled, symbols_enabled);
-
-    if (p == NULL)
+    while (1)
     {
-        puts("Something went wrong generating the password");
-        return -1;
-    }
+        char *p = create_password(len, numbers_enabled, symbols_enabled);
 
-    printf("Password: %s\n", p);
+        if (p == NULL)
+        {
+            puts("Something went wrong generating the password");
+            return -1;
+        }
+
+        printf("\nPassword: %s\n\n", p);
+
+        int another = get_another_password();
+
+        if (!another)
+        {
+            return 0;
+        }
+    }
 }

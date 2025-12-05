@@ -40,7 +40,7 @@ int get_input(char *prmpt, char *buff, size_t sz)
         return (extra == 1) ? TOO_LONG : OK;
     }
 
-    // Add null terminator as last character.
+    // Add null character as last character.
     buff[strlen(buff) - 1] = '\0';
     return OK;
 }
@@ -122,4 +122,15 @@ int get_symbols_flag()
     char v = in[0];
 
     return v == 'Y' || v == 'y';
+}
+
+int get_another_password()
+{
+    char in[2];
+    puts("Generate another password?");
+    get_input("Y/N (default Y) ", in, sizeof(in));
+
+    char v = in[0];
+
+    return v == 'Y' || v == 'y' || v == '\0';
 }
