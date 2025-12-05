@@ -101,3 +101,13 @@ int get_password_len()
         }
     }
 }
+
+int get_numbers_flag()
+{
+    return 1;
+}
+
+int get_symbols_flag()
+{
+    return 1;
+}
