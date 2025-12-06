@@ -16,6 +16,10 @@ make
 
 // Run the executable
 ./build/pgen
+
+./build/pgen --help
+
+./build/pgen --length=50 -ns
 ```
 
 ## TODO
